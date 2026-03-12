@@ -1,0 +1,224 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ustawienie ekranu aby był wyśrodkowany*/
+#print-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* wyśrodkowaniu menu do przechodzenia między */
+.navigation {
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+/* usunięciu paddingu który pojawił się nie wiem skąd na elementach listy */
+.navigation > ol {
+    padding-left: 0;
+}
+
+/* usunięcie brzydkiego podkreślenia na odnośniku do innych sal*/
+ol > a {
+    text-decoration: none;
+    color: #29abe2;
+}
+
+/* po najechaniu na odnośnik tekst się pogrubia */
+.navigation > ol:hover {
+    font-weight: bolder;
+}
+
+hr {
+    width: 25%;
+}
+
+#actions > button {
+    background-color: #808080;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    width: 150px;   
+}
+
+#actions > button:hover {
+     background-color: #29abe2;
+}
+
+#actions > button:active {
+    background-color: #2963e2;
+}
+
+
+/* stylizacja bloczku z "ekranem"*/
+.screen {
+    width: 500px;
+    height: 30px;
+    background-color: #29abe2;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ustawienie bloku z siedzeniami */
+.cinema-hall {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ustawienie rzędów */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+}
+
+/* ustawienie numerów rzędów*/
+.row-number {
+    width: 30px;
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+}
+
+/* stylizacja siedzeń*/
+.seat {
+    width: 24px;
+    height: 24px;
+    background-color: #808080;
+    color: white;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 4px 2px 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* stylizacja nieistniejących siedzeń aby były niewidoczne i siedzenia się prawidłowo układały */
+.unavailableSeat {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 4px 2px 2px;
+    position: relative;
+    cursor: not-allowed;
+}
+
+/* Stylizacja "uszu" fotela */
+.seat::before, .seat::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 4px;
+    height: 12px;
+    background-color: #808080;
+    border-radius: 2px;
+}
+.seat::before { left: -3px; }
+.seat::after { right: -3px; }
+
+/* stylizacja po najechaniu na siedzenie*/
+.seat:hover {
+    background-color: #29abe2;
+}
+
+.seat:active {
+    background-color: #2963e2;
+}
+
+/* usunięciu widoczności checkboxa w celu dalszej lepszej stylizacji*/
+.inputClass {
+    position: absolute;
+    opacity: 0;
+}
+
+/* powiększenie pola siedzenia aby moża było łatwiej je zaznaczyć */
+.seat-label {
+    padding: 9px;
+}
+
+/* stylizacja znacznika <span> w którym jest numer siedzenia aby poprawnie się pokazywał*/
+.spanClass {
+    display: inline-block;
+    padding: 7px;
+    cursor: pointer;
+}
+
+/* stylizacja zaznaczonego siedzenia aby kolory dobrze pokrywały siedzenia */
+.selectedSeat {
+    background: #5a5757;
+}
+
+/* Specyficzne wyrównania dla rzędów */
+.row-1 { margin-bottom: 5px; }
+
+/* --- KONFIGURACJA WYDRUKU --- */
+@media print and (orientation:landscape){
+    /* ukrycie wszystkiego poza salą */
+    #menu, #actions, .btn-home, button {
+        display: none !important;
+    }
+
+    /* ustawienie tła na białe na białe */
+    body {
+        background-color: white;
+    }
+
+    /* ustawienie ekranu do 100% szerokości ekranu*/
+    #print-area {
+        width: 100%;
+    }
+
+    /* Wyraźne zaznaczenie wybranych miejsc na papierze */
+    .inputClass:checked + .seat-label {
+        background-color: #000 !important; /* Czarne na wydruku dla kontrastu */
+        color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* stylizacja wyglądu siedzenia na druku aby był dobrze widoczny */
+    .seat-label {
+        padding: 0;
+        border: 1px solid #000;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        font-weight: bolder;
+        color: black
+    }
+
+    /* stylizacja bloczku z ekranem aby był bardziej zrozumiały i widoczny*/
+    .screen {
+        border: 1px solid black;
+    }
+
+    hr {
+        visibility: hidden;
+    }
+}
