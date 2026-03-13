@@ -14,9 +14,11 @@ body {
     align-items: center;
 }
 
-/* wyśrodkowaniu menu do przechodzenia między */
+/* wyśrodkowaniu menu do przechodzenia między salami */
 .navigation {
     width: 500px;
+    margin-bottom: 10px;
+    background-color: #29abe2;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -30,7 +32,9 @@ body {
 /* usunięcie brzydkiego podkreślenia na odnośniku do innych sal*/
 ol > a {
     text-decoration: none;
-    color: #29abe2;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* po najechaniu na odnośnik tekst się pogrubia */
@@ -60,6 +64,17 @@ hr {
     background-color: #2963e2;
 }
 
+#textInputs p {
+    text-align: center;
+}
+
+/* stylizacja pola tekstowego */
+#movieName {
+}
+
+#settingsForPrint {
+    text-align: center;
+}
 
 /* stylizacja bloczku z "ekranem"*/
 .screen {
@@ -178,9 +193,14 @@ hr {
 .row-1 { margin-bottom: 5px; }
 
 /* --- KONFIGURACJA WYDRUKU --- */
-@media print and (orientation:landscape){
+@media print{
     /* ukrycie wszystkiego poza salą */
     #menu, #actions, .btn-home, button {
+        display: none !important;
+    }
+
+    #settingsForPrint,
+    #settingsForPrint * {
         display: none !important;
     }
 
@@ -221,4 +241,21 @@ hr {
     hr {
         visibility: hidden;
     }
+
+    #textInputs > input {
+        font-style: italic;
+        font-size: 35px;
+        text-align: center;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #textInputs > label {
+        display: none;
+    }
+}
+
+@page {
+    size: landscape;
 }

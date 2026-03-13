@@ -12,7 +12,14 @@
         <ol><a href="sala1.php">Sala 1</a></ol>
         <ol><a href="sala2.php">Sala 2</a></ol>
         <ol><a href="sala3.php">Sala 3</a></ol>
+        <ol><a href="sala4.php">Sala 4</a></ol>
     </div>
+</div>
+
+<div id="textInputs">
+    <label for="movieName">Nazwa filmu</label>
+    <input type="text" id="movieName"><br>
+    <p>Sala 4</p>
 </div>
 
     <div id="print-area">
@@ -64,6 +71,11 @@
 <hr>
 <div id="actions">
     <button onclick="printDiv()">Drukuj</button>
+</div>
+
+<div id="settingsForPrint">
+    <h2>&darr; Ustawienia druku &darr;</h2>
+    <p>Skala: niestandardowa &rarr; 180 &#124; Marginesy: minimalne</p>
 </div>
 
 <script src="druk.js"></script>
