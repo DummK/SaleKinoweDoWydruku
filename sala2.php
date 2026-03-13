@@ -20,10 +20,17 @@
     <div class="cinema-hall" id="c">
         <?php
         $rows = [
-                1  => range(16, 1), 2  => range(16, 1), 3  => range(16, 1),
-                4  => range(16, 1), 5  => range(16, 1), 6  => range(16, 1),
-                7  => range(16, 1), 8  => range(16, 1), 9  => range(16, 1),
-                10 => range(16, 1), 11 => range(21, 1),
+                1  => range(16, 1),
+                2  => range(16, 1),
+                3  => range(16, 1),
+                4  => range(16, 1),
+                5  => range(16, 1),
+                6  => range(16, 1),
+                7  => range(16, 1),
+                8  => range(16, 1),
+                9  => range(16, 1),
+                10 => range(16, 1),
+                11 => range(21, 1),
         ];
 
         $counter = 0;
@@ -38,13 +45,13 @@
                     echo "<div class='unavailableSeat' title='Rząd $rowNum, Miejsce $seatNum'></div>";
                 } else if($rowNum == 1 && $seatNum > 10) {
                     echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
-                    echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca'>";
+                    echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                     $result = $seatNum - 4;
                     echo "  <label for='$uniqueId' class='seat-label'>$result</label>";
                     echo "</div>";
                 } else {
                     echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
-                    echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca'>";
+                    echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                     echo "  <label for='$uniqueId' class='seat-label'>$seatNum</label>";
                     echo "</div>";
                 }

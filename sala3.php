@@ -47,7 +47,7 @@
                 $uniqueId = "s_" . $counter++;
 
                 echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
-                echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca'>";
+                echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                 echo "  <label for='$uniqueId' class='seat-label'>$seatNum</label>";
                 echo "</div>";
             }

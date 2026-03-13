@@ -42,13 +42,13 @@
                         echo "<div class='unavailableSeat' title='Rząd $rowNum, Miejsce $seatNum'></div>";
                     } else if ($rowNum == 1 && ($seatNum > 10)) {
                         echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
-                        echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca'>";
+                        echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                         $result = $seatNum - 4;
                         echo "  <label for='$uniqueId' class='seat-label'>$result</label>";
                         echo "</div>";
                     } else {
                         echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
-                        echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca'>";
+                        echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                         echo "  <label for='$uniqueId' class='seat-label'>$seatNum</label>";
                         echo "</div>";
                     }
