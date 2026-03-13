@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Układ Sali Kinowej</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
@@ -80,8 +80,8 @@
     <p>Skala: niestandardowa &rarr; 140 &#124; Marginesy: minimalne</p>
 </div>
 
-<script src="druk.js"></script>
+<script src="../JS/druk.js"></script>
 <script src="https://unpkg.com/selecto/dist/selecto.min.js"></script>
-<script type="module" src="Operations.js"></script>
+<script type="module" src="../JS/Operations.js"></script>
 </body>
 </html>

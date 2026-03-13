@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Układ Sali Kinowej</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
@@ -19,35 +19,35 @@
 <div id="textInputs">
     <label for="movieName">Nazwa filmu</label>
     <input type="text" id="movieName"><br>
-    <p>Sala 4</p>
+    <p>Sala 1</p>
 </div>
 
-    <div id="print-area">
-        <div class="screen">Ekran</div>
-        <div class="cinema-hall" id="c">
-            <?php
-
-            $rows =[
-                    1 => range(1,10),
-                    2 => range(1,12),
-                    3 => range(1,13),
-                    4 => range(1,14),
-                    5 => range(1,17)
-
+<div id="print-area">
+    <div class="screen">Ekran</div>
+    <div class="cinema-hall" id="c">
+        <?php
+            $rows= [
+                    1 => range(15,1),
+                    2 => range(15,1),
+                    3 => range(15,1),
+                    4 => range(15,1),
+                    5 => range(15,1),
+                    6 => range(15,1),
+                    7 => range(15,1),
+                    8 => range(19,1),
             ];
 
             $counter = 0;
-            foreach ($rows as $rowNum => $seats){
+            foreach($rows as $rowNum => $seats) {
                 echo "<div class='row row-$rowNum'>";
-
                 echo "<div class='row-number'>$rowNum</div>";
 
                 foreach ($seats as $seatNum) {
                     $uniqueId = "s_" . $counter++;
 
-                    if($rowNum == 1 && ($seatNum >= 4 && $seatNum <= 7)) {
+                    if ($rowNum == 1 && ($seatNum >= 7 && $seatNum <= 10)) {
                         echo "<div class='unavailableSeat' title='Rząd $rowNum, Miejsce $seatNum'></div>";
-                    } else if($rowNum == 1 && $seatNum > 7) {
+                    } else if ($rowNum == 1 && ($seatNum > 10)) {
                         echo "<div class='seat' title='Rząd $rowNum, Miejsce $seatNum'>";
                         echo "  <input type='checkbox' class='inputClass' id='$uniqueId' name='Miejsca' autocomplete='off'>";
                         $result = $seatNum - 4;
@@ -60,14 +60,12 @@
                         echo "</div>";
                     }
                 }
-
-                echo "<div class='row-number'>$rowNum</div>";
-
-                echo "</div>";
-            }
-            ?>
-        </div>
+                    echo "<div class='row-number'>$rowNum</div>";
+                    echo "</div>";
+                }
+        ?>
     </div>
+</div>
 <hr>
 <div id="actions">
     <button onclick="printDiv()">Drukuj</button>
@@ -75,11 +73,11 @@
 
 <div id="settingsForPrint">
     <h2>&darr; Ustawienia druku &darr;</h2>
-    <p>Skala: niestandardowa &rarr; 180 &#124; Marginesy: minimalne</p>
+    <p>Skala: niestandardowa &rarr; 150 &#124; Marginesy: minimalne</p>
 </div>
 
-<script src="druk.js"></script>
-<script src="https://unpkg.com/selecto/dist/selecto.min.js"></script>
-<script type="module" src="Operations.js"></script>
+    <script src="../JS/druk.js"></script>
+    <script src="https://unpkg.com/selecto/dist/selecto.min.js"></script>
+    <script type="module" src="../JS/Operations.js"></script>
 </body>
 </html>
