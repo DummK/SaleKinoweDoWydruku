@@ -1,42 +1,68 @@
 <h1 align="center">SaleKinoweDoWydruku</h1>
 
 <p align="center">
-A small web tool for selecting seats on a cinema layout and printing the result.
+A simple web tool for selecting cinema seats and printing the seating layout.
 </p>
-
-<hr>
-
-<h2>Description</h2>
-
-<p>
-SaleKinoweDoWydruku is a simple web page that allows users to mark seats directly on a seating layout.
-After selecting the desired seats, the layout can be printed using the print button located below the seating area.
-</p>
-
-<h2>Features</h2>
-
-<ul>
-<li>Interactive seat selection on the seating layout</li>
-<li>Support for selecting multiple seats</li>
-<li>Printable layout generated directly from the page</li>
-</ul>
-
-<h2>Usage</h2>
-
-<p>
-Open the page in a browser, select the seats on the layout and use the print button below the seating area.
-The browser print dialog will appear, allowing the layout to be printed.
-</p>
-
-<h2>Print setup</h2>
-
-<p>
-For the best result when printing, disable browser headers and footers and use minimal margins.
-This keeps the printed layout clean and free from unnecessary elements such as page titles.
-</p>
-
-<hr>
 
 <p align="center">
-This project is hosted on GitHub.
+<img src="docs/image1.png" width="800">
 </p>
+
+<hr>
+
+## Description
+
+SaleKinoweDoWydruku is a lightweight web page designed to quickly prepare printable cinema seating layouts.  
+Users can select seats directly on the seating map, provide the movie title and generate a clean print-ready view of the layout.
+
+<hr>
+
+## Selecting seats
+
+Seats can be selected directly on the seating layout.  
+Multiple seats can be marked before printing, making it easy to prepare seating arrangements.
+
+<img src="docs/image2.png" width="750">
+
+<hr>
+
+## Movie title
+
+The page also allows entering the movie title.  
+The provided title appears on the printed layout, making it easier to identify the screening.
+
+<img src="docs/image3.png" width="650">
+
+<hr>
+
+## Print preview
+
+After selecting seats and entering the movie title, the layout can be printed using the button below the seating area.  
+The page is styled specifically for browser printing to produce a clean and readable seating layout.
+
+<img src="docs/image4.png" width="750">
+
+<hr>
+
+## Usage
+
+Open the page in a browser, select the desired seats, enter the movie title and press the print button.  
+Your browser's print dialog will open, allowing the layout to be printed.
+
+<hr>
+
+## Project structure
+
+```
+SaleKinoweDoWydruku
+│
+├─ docs
+│   ├─ overview.png
+│   ├─ selection.png
+│   ├─ movie-title.png
+│   └─ print-preview.png
+│
+├─ index.html
+├─ style.css
+└─ README.md
+```
