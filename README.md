@@ -56,13 +56,26 @@ Your browser's print dialog will open, allowing the layout to be printed.
 ```
 SaleKinoweDoWydruku
 │
-├─ docs
-│   ├─ overview.png
-│   ├─ selection.png
-│   ├─ movie-title.png
-│   └─ print-preview.png
+├─ docs                     # screenshots used in the README
+│   ├─ image1.png
+│   ├─ image2.png
+│   ├─ image3.png
+│   └─ image4.png
 │
-├─ index.html
-├─ style.css
+├─ JS                       # client-side logic
+│   ├─ druk.js
+│   └─ Operations.js
+│
+├─ PHP                      # cinema room layouts
+│   ├─ sala1.php
+│   ├─ sala2.php
+│   ├─ sala3.php
+│   └─ sala4.php
+│
+├─ node_modules             # npm dependencies
+│
+├─ style.css                # main stylesheet
+├─ package.json             # project configuration
+├─ package-lock.json        # dependency lock file
 └─ README.md
 ```
